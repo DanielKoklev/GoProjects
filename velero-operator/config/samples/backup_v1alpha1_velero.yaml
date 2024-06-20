@@ -1,0 +1,8 @@
+apiVersion: backup.go-learning.com/v1alpha1
+kind: Velero
+metadata:
+  name: velero-sample
+spec:
+  provider: aws
+  bucket: my-velero-bucket
+  region: us-east-1

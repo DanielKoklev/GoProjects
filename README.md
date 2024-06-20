@@ -1,0 +1,1 @@
+# Collection of simple projects for learning Golang.
