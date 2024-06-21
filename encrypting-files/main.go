@@ -32,11 +32,12 @@ func printHelp() {
 	fmt.Println("Usage:")
 	fmt.Println("")
 	fmt.Println("\t go run . encrypt /path/to/file")
+	fmt.Println("\t go run . decrypt /path/to/file")
 	fmt.Println("")
 	fmt.Println("Commands:")
 	fmt.Println("\t encrypt\tEncrypts a file with provided password")
 	fmt.Println("\t decrypt\tDecrypts a file with provided password")
-	fmt.Println("\t help\tDisplays this message\n")
+	fmt.Println("\t help\tDisplays this message")
 }
 
 func encryptHandle(){
@@ -89,10 +90,7 @@ func getPassword() []byte {
 }
 
 func validatePassword(password []byte, confirmedPassword []byte) bool {
-	if !bytes.Equal(password, confirmedPassword) {
-		return false
-	}
-	return true
+	return bytes.Equal(password, confirmedPassword)
 }
 
 func validateFile(file string) bool {
